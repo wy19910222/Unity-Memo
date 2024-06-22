@@ -188,7 +188,7 @@ public class AudioClipper : EditorWindow {
 			switch (Event.current.type) {
 				case EventType.MouseDown: {
 					Vector2 mousePos = Event.current.mousePosition;
-					if (mousePos.y >= waveformRect.yMin && waveformRect.y <= waveformRect.yMax) {
+					if (mousePos.y >= waveformRect.yMin && mousePos.y <= waveformRect.yMax) {
 						float middle = (startLineRect.x + endLineRect.x) * 0.5F;
 						float temp1 = Mathf.Min(startLineRect.x + 10, middle);
 						float temp2 = Mathf.Max(endLineRect.x - 10, middle);
