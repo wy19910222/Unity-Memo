@@ -134,7 +134,7 @@ GameObject:
   - component: {fileID: 1152891690}
   - component: {fileID: 1152891689}
   m_Layer: 0
-  m_Name: EvenDistribution (1)
+  m_Name: EvenDistributionSphere
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -156,6 +156,8 @@ MonoBehaviour:
   distance: 1
   pointCount: 300
   turnFraction: 0.618034
+  drawLine: 1
+  drawSphere: 1
 --- !u!4 &1152891690
 Transform:
   m_ObjectHideFlags: 0
@@ -182,7 +184,7 @@ GameObject:
   - component: {fileID: 1987885323}
   - component: {fileID: 1987885322}
   m_Layer: 0
-  m_Name: EvenDistribution
+  m_Name: EvenDistributionCone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,6 +207,8 @@ MonoBehaviour:
   pointCount: 300
   pow: 0.5
   turnFraction: 0.618034
+  drawLine: 1
+  drawSphere: 1
 --- !u!4 &1987885323
 Transform:
   m_ObjectHideFlags: 0
