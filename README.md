@@ -62,6 +62,7 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 
 ## 备忘8：EvenDistribution
 在 **圆形平面** 或 **球面** 上均匀分布点，可用于视野内均匀分布射线检测。  
+其原理是将多个坐标，以幂函数分配到圆心的距离（为了处理中间密边缘疏的问题），然后从圆心到边缘螺旋分布，每次旋转黄金分割比例（(√5-1)/2）的弧度值。
 ![DistributionInCircle](Assets/Memo8_EvenDistribution/Captures~/DistributionInCircle.gif) 
 ![DistributionInSphere](Assets/Memo8_EvenDistribution/Captures~/DistributionInSphere.gif)  
 **示例：** 打开 [**Sample**](Assets/Memo8_EvenDistribution/Scene/Sample.unity) 场景，即可查看效果。  
