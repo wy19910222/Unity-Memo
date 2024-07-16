@@ -15,8 +15,12 @@ using UnityEditor;
 namespace Memo4_PopupStylePath.Editor {
 	public class PopupStylePathDrawer {
 		private GUIStyle m_ButtonMidStyle;
-		private GUIStyle ButtonMidStyle => m_ButtonMidStyle ??= "ButtonMid";
-		
+		private GUIStyle ButtonMidStyle => m_ButtonMidStyle ??= new GUIStyle("ButtonMid") {
+			focused = new GUIStyleState() {
+				textColor = Color.white
+			}
+		};
+
 		private bool m_IsEditingPath;
 		
 		public string DrawDirectory(string dirPath, Func<string, string[]> listChildrenFunc) {
