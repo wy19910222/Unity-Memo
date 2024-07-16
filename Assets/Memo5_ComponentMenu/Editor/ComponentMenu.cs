@@ -10,8 +10,8 @@ using UnityEngine;
 
 namespace Memo5_ComponentMenu.Editor {
 	public static class ComponentMenu {
-		[MenuItem("CONTEXT/Component/Replace")]
-		private static void Replace(MenuCommand command) {
+		[MenuItem("CONTEXT/Component/LogComponent")]
+		private static void LogComponent(MenuCommand command) {
 			Debug.Log(command.context);
 		}
 	}
