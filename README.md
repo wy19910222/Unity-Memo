@@ -1,0 +1,67 @@
+# Unity备忘录
+本仓库用来备忘一些Unity相关的技术，包括API、算法、实现效果、某些问题的解决方案等。  
+**这些东西有以下一个或几个特征：**  
+1.Unity提供的很简单的某组API。  
+2.并非我原创，而是从某些途径学习到的技术点。  
+3.是我原创，但用的时候需要根据具体需求做相应修改，而不能形成独立完整的插件。  
+
+## 备忘1：IMESettings
+用于控制Unity输入框是否支持输入法。  
+我们平时使用Unity编辑器时，偶尔会出现输入框不能输入中文的问题，用它重新设置一下模式就可以解决这个问题。  
+**示例：** 在菜单栏中可以找到相应的设置项。  
+
+## 备忘2：GameViewResolution
+增删改查Game窗口的分辨率预设列表，并可设置当前应用的是第几个预设。  
+同时还展示了如何利用友元程序集去访问官方程序集内的被 **internal** 关键字修饰的成员。  
+**示例：** 在菜单栏中可以找到相应的设置项，但示例并不完全，建议直接看代码。
+
+## 备忘3：ComponentReplace
+这是个老脚本废弃方案——遍历整个工程，将所有对老脚本的引用定制化替换为新的脚本，即使新老脚本的成员变量完全不同。（需要将资产序列化模式改为文本模式。）  
+之前在项目开发过程中，我遇到个问题：曾经写的某个脚本无法满足日益增长的需求，但是如果直接重写这个脚本，又暂时没有时间做回归测试。于是我决定新写一个脚本，新的内容用新的脚本，老内容暂时不去动它，等以后时间足够了，再把老脚本替换成新脚本。  
+但由于脚本是挂在GameObject上的，做成prefab后，数据都序列化到文件中了，而新脚本里某些字段的类型都变了，比如从bool变成了int[]，如果仅仅是简单的替换GUID，那么大量的序列化数据将会丢失。  
+针对某个Prefab的替换思路（场景文件同理，但由于项目中并没有用到场景资源，所以没有做处理。）：  
+1. 找到所有老脚本对象，在其所在的GameObject上挂上新脚本，并赋值好数据。由于Prefab支持嵌套，所以还得处理外部对内部进行的覆盖修改：  
+   1. 替换Prefab内不属于子孙Prefab的老脚本。  
+   2. 修改对子孙Prefab新增的老脚本。（可以合并到最后一条一起处理）  
+   3. 修改对子孙Prefab移除的老脚本。（由于最终FileID没变，所以可以忽略）  
+   4. 修改对子孙Prefab中老脚本的修改。  
+2. 以文本的形式打开prefab文件，将老脚本与新脚本的FileID交换。  
+3. 刷新工程后重新读取prefab，移除所有老脚本对象。  
+
+脚本分为替换逻辑（ReplaceComponents）和变量映射逻辑（Converter_XXX）两部分，前者负责遍历整个工程的Prefab并进行替换操作，后者负责把老脚本的变量映射到新脚本的变量上。  
+**示例：** 由于 Converter_Default 是空的，所以菜单栏中对应的菜单项没有任何功能，建议直接看代码。  
+
+## 备忘4：PopupStylePath
+一个Windows资源管理器地址栏风格的文本输入框。  
+这是从我以前写的一个OSS上传工具中抽出来的，曾经我用它展示本地文件夹路径和远端OSS路径（通过网络请求获取远端目录）。  
+![PopupStylePath](Assets/Memo4_PopupStylePath/Captures~/PopupStylePath.png)  
+**示例：** 在菜单栏中可以找到相应的菜单项，点击可打开示例窗口。  
+
+## 备忘5：ComponentMenu
+全局地在所有组件右键菜单中添加菜单项。  
+![ComponentMenu](Assets/Memo5_ComponentMenu/Captures~/ComponentMenu.png)  
+**示例：** 在Inspector面板中，右键点击任意组件标题，在弹出的菜单中可以看到新增的“LogComponent”菜单项，点击菜单项可以打印组件对象。  
+
+## 备忘6：GetFieldPath
+将一连串的成员变量路径转成字符串的形式，类似 **nameof** 关键字。  
+有时候为了统一处理，我们需要获取变量路径，但直接手写变量路径容易出错，这个方法就能避免手写路径。  
+**示例：** 在菜单栏中可以找到相应的菜单项，点击可打印出"transform.position.magnitude"。
+``` C#
+FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude); // "transform.position.magnitude"
+```
+
+## 备忘7：GetCallerFilePath
+用四种方法获取当前脚本的路径：  
+* 通过 [CallerFilePath] 修饰函数参数，在编译时将源码文件完整路径传递给该参数。通用性高，但必须通过一次传参。  
+* 从调用堆栈里获取文件路径，在运行时生成，可能会影响性能。  
+* 通过ScriptableObject（或MoniBehaviour）对象获取到MonoScript对象，再通过AssetDatabase获取到MonoScript对象的路径，适用于本身就在MonoScript或MoniBehaviour派生类内的调用。  
+* 通过一个已知的独一无二的文件名，搜索文件路径，适用于已知文件但不确定文件被放在哪里的情况。  
+
+![GetCallerFilePath](Assets/Memo7_GetCallerFilePath/Captures~/GetCallerFilePath.png)  
+**示例：** 在菜单栏中可以找到相应的菜单项，点击可打印出脚本的路径。  
+
+## 备忘8：EvenDistribution
+在圆形或球面上均匀分布点，常用于视野检测。  
+![DistributionInCircle](Assets/Memo8_EvenDistribution/Captures~/DistributionInCircle.gif) 
+![DistributionInSphere](Assets/Memo8_EvenDistribution/Captures~/DistributionInSphere.gif)  
+**示例：** 打开 [**Sample**](Assets/Memo8_EvenDistribution/Scene/Sample.unity) 场景，即可查看效果。  
