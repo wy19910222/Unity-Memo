@@ -65,10 +65,10 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 其原理是将多个坐标，以幂函数分配到圆心的距离（为了处理中间密边缘疏的问题），然后从圆心到边缘螺旋分布，每次旋转黄金分割比例（(√5-1)/2）的弧度值。  
 ![DistributionInCircle](Assets/Memo8_EvenDistribution/Captures~/DistributionInCircle.gif) 
 ![DistributionInSphere](Assets/Memo8_EvenDistribution/Captures~/DistributionInSphere.gif)  
-**示例：** 打开 Memo8_EvenDistribution/Scenes 目录下的 [**Sample**](Assets/Memo8_EvenDistribution/Scenes/Sample.unity) 场景，即可查看效果。  
+**示例：** 打开 Memo8_EvenDistribution/Scenes 目录下的 [**Sample**](Assets/Memo8_EvenDistribution/Scenes/Sample.unity) 场景，即可在 **Scene窗口** 查看效果。  
 
 ## 备忘9：RayIntersectsTriangle
 判断射线与三角面是否相交，若相交，则返回距离。  
 参考了 [**《如何判断三维空间中射线是否与三角形相交》**](https://zhuanlan.zhihu.com/p/687077146) ，原理文章里有写。
 ![RayIntersectsTriangle](Assets/Memo9_RayIntersectsTriangle/Captures~/RayIntersectsTriangle.gif)  
-**示例：** 打开 Memo9_RayIntersectsTriangle/Scenes 目录下的 [**Sample**](Assets/Memo9_RayIntersectsTriangle/Scenes/Sample.unity) 场景，即可查看效果。  
+**示例：** 打开 Memo9_RayIntersectsTriangle/Scenes 目录下的 [**Sample**](Assets/Memo9_RayIntersectsTriangle/Scenes/Sample.unity) 场景，即可在 **Scene窗口** 查看效果。  
