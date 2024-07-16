@@ -19,7 +19,7 @@ public static class CurrentFilePathUtils {
 		Debug.Log(GetFilePathByCaller());
 		Debug.Log("方法2：从调用堆栈里获取文件路径，在运行时生成，可能会影响性能。");
 		Debug.Log(GetFilePathByStackTrace());
-		Debug.Log("方法3：通过ScriptableObject对象获取到MonoScript对象，再通过AssetDatabase获取到MonoScript对象的路径，适用于本身就在MonoScript或MoniBehaviour派生类内的调用。");
+		Debug.Log("方法3：通过ScriptableObject（或MoniBehaviour）对象获取到MonoScript对象，再通过AssetDatabase获取到MonoScript对象的路径，适用于本身就在MonoScript（或MoniBehaviour）派生类内的调用。");
 		Debug.Log(GetFilePathByScriptableObject());
 		Debug.Log("方法4：通过一个已知的独一无二的文件名，搜索文件路径，适用于已知文件但不确定文件被放在哪里的情况。");
 		Debug.Log(GetFilePathByFilename());
