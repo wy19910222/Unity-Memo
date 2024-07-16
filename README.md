@@ -2,7 +2,7 @@
 本仓库用来备忘一些Unity相关的技术，包括API、算法、实现效果、某些问题的解决方案等。  
 **这些东西有以下一个或几个特征：**  
 1.Unity提供的很简单的某组API。  
-2.并非我原创，而是从某些途径学习到的技术点。  
+2.并非我原创，而是从某些途径学习到的技术点（可能会做些许修改）。  
 3.是我原创，但用的时候需要根据具体需求做相应修改，而不能形成独立完整的插件。  
 
 ## 备忘1：IMESettings
@@ -61,7 +61,7 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 **示例：** 在菜单栏中可以找到相应的菜单项，点击可打印出脚本的路径。  
 
 ## 备忘8：EvenDistribution
-在圆形或球面上均匀分布点，常用于视野检测。  
+在 **圆形平面** 或 **球面** 上均匀分布点，可用于视野内均匀分布射线检测。  
 ![DistributionInCircle](Assets/Memo8_EvenDistribution/Captures~/DistributionInCircle.gif) 
 ![DistributionInSphere](Assets/Memo8_EvenDistribution/Captures~/DistributionInSphere.gif)  
 **示例：** 打开 [**Sample**](Assets/Memo8_EvenDistribution/Scene/Sample.unity) 场景，即可查看效果。  
