@@ -17,7 +17,7 @@ using UnityEditor;
 
 using UObject = UnityEngine.Object;
 
-namespace Memo3_ComponentReplace.Editor {
+namespace Memo003_ComponentReplace.Editor {
 	using TFrom = MonoBehaviour;
 	using TTo = MonoBehaviour;
 	using Converter = Converter_Default;

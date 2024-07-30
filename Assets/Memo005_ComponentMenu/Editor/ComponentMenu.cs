@@ -8,7 +8,7 @@
 using UnityEditor;
 using UnityEngine;
 
-namespace Memo5_ComponentMenu.Editor {
+namespace Memo005_ComponentMenu.Editor {
 	public static class ComponentMenu {
 		[MenuItem("CONTEXT/Component/LogComponent")]
 		private static void LogComponent(MenuCommand command) {

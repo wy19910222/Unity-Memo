@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Memo4_PopupStylePath.Editor {
+namespace Memo004_PopupStylePath.Editor {
 	public class PopupStylePathDrawer {
 		private GUIStyle m_ButtonMidStyle;
 		private GUIStyle ButtonMidStyle {

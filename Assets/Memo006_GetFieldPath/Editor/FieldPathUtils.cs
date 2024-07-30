@@ -9,17 +9,19 @@ using System;
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-public static class FieldPathUtils {
-	public static string GetFieldPath<TType, TValue>(Expression<Func<TType, TValue>> expr) {
-		List<string> member = new List<string>();
-		if (expr.Body.NodeType == ExpressionType.MemberAccess) {
-			MemberExpression me = expr.Body as MemberExpression;
-			while (me != null) {
-				member.Add(me.Member.Name);
-				me = me.Expression as MemberExpression;
+namespace Memo006_GetFieldPath.Editor {
+	public static class FieldPathUtils {
+		public static string GetFieldPath<TType, TValue>(Expression<Func<TType, TValue>> expr) {
+			List<string> member = new List<string>();
+			if (expr.Body.NodeType == ExpressionType.MemberAccess) {
+				MemberExpression me = expr.Body as MemberExpression;
+				while (me != null) {
+					member.Add(me.Member.Name);
+					me = me.Expression as MemberExpression;
+				}
+				member.Reverse();
 			}
-			member.Reverse();
+			return string.Join(".", member);
 		}
-		return string.Join(".", member);
 	}
 }

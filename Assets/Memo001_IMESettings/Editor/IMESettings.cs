@@ -8,7 +8,7 @@
 using UnityEngine;
 using UnityEditor;
 
-namespace Memo1_IMESettings.Editor {
+namespace Memo001_IMESettings.Editor {
 	public static class IMESettings {
 		[MenuItem("Memo/Memo001/IMECompositionModeAuto", priority = 1)]
 		private static void IMECompositionModeAuto() {

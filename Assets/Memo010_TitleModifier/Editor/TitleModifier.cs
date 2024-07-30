@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using UnityEditor;
 
-namespace ToolKits {
+namespace Memo010_TitleModifier.Editor {
 	public static class TitleModifier {
 		[InitializeOnLoadMethod]
 		private static void Init() {

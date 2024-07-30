@@ -10,7 +10,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace Memo4_PopupStylePath.Editor {
+namespace Memo004_PopupStylePath.Editor {
 	public class PopupStylePathDemoWindow : EditorWindow {
 		[MenuItem("Memo/Memo004/PopupStylePathDemoWindow", priority = 4)]
 		public static void ShowWindow() {

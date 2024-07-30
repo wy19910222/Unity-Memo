@@ -7,5 +7,7 @@
 
 using UnityEngine;
 
-public class EmptyScriptableObject : ScriptableObject {
+namespace Memo007_GetCallerFilePath.Editor {
+	public class EmptyScriptableObject : ScriptableObject {
+	}
 }

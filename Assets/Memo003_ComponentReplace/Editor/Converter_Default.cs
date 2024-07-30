@@ -9,7 +9,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 
-namespace Memo3_ComponentReplace.Editor {
+namespace Memo003_ComponentReplace.Editor {
 	public static class Converter_Default {
 		public static void CompConverter(MonoBehaviour fromBehaviour, MonoBehaviour toBehaviour) {
 			// 在这里把fromBehaviour的所有数据复制给toBehaviour
