@@ -9,7 +9,7 @@ using UnityEditor;
 using UnityEngine;
 
 public static class GetFieldPathDemo {
-	[MenuItem("Memo/Memo6/GetFieldPathDemo")]
+	[MenuItem("Memo/Memo006/GetFieldPathDemo", priority = 6)]
 	public static void Test() {
 		Debug.Log( FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude));
 	}

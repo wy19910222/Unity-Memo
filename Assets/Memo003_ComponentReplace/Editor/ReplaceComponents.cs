@@ -23,7 +23,7 @@ namespace Memo3_ComponentReplace.Editor {
 	using Converter = Converter_Default;
 	
 	public static class ReplaceComponents {
-		[MenuItem("Memo/Memo3/老脚本废弃方案——组件替换")]
+		[MenuItem("Memo/Memo003/老脚本废弃方案——组件替换", priority = 3)]
 		private static void ReplaceComponent() {
 			List<UObject> assets = new List<UObject>(Selection.objects);
 			string[] selectedPaths = assets.ConvertAll(AssetDatabase.GetAssetPath).ToArray();

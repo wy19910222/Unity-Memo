@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Memo2_GameViewResolution.Editor {
 	public static class GameViewResolution {
-		[MenuItem("Memo/Memo2/SetGameViewResolution_1920_1080")]
+		[MenuItem("Memo/Memo002/SetGameViewResolution_1920_1080", priority = 2)]
 		private static void SetGameViewResolution_1920_1080() {
 			ForceSetGameViewResolution(1920, 1080, true);
 		}

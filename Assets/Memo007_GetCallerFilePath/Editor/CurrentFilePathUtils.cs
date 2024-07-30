@@ -13,7 +13,7 @@ using UnityEditor;
 using Debug = UnityEngine.Debug;
 
 public static class CurrentFilePathUtils {
-	[MenuItem("Memo/Memo7/LogCurrentFilePath")]
+	[MenuItem("Memo/Memo007/LogCurrentFilePath", priority = 7)]
 	public static void LogCurrentFilePath() {
 		Debug.Log("方法1：通过[CallerFilePath]修饰函数参数，在编译时将源码文件完整路径传递给该参数。通用性高，但必须通过一次传参。");
 		Debug.Log(GetFilePathByCaller());

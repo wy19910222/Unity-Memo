@@ -10,19 +10,19 @@ using UnityEditor;
 
 namespace Memo1_IMESettings.Editor {
 	public static class IMESettings {
-		[MenuItem("Memo/Memo1/IMECompositionModeAuto")]
+		[MenuItem("Memo/Memo001/IMECompositionModeAuto", priority = 1)]
 		private static void IMECompositionModeAuto() {
 			Input.imeCompositionMode = IMECompositionMode.Auto;
 		}
-		[MenuItem("Memo/Memo1/IMECompositionModeOn")]
+		[MenuItem("Memo/Memo001/IMECompositionModeOn", priority = 1)]
 		private static void IMECompositionModeOn() {
 			Input.imeCompositionMode = IMECompositionMode.On;
 		}
-		[MenuItem("Memo/Memo1/IMECompositionModeOff")]
+		[MenuItem("Memo/Memo001/IMECompositionModeOff", priority = 1)]
 		private static void IMECompositionModeOff() {
 			Input.imeCompositionMode = IMECompositionMode.Off;
 		}
-		[MenuItem("Memo/Memo1/LogIMECompositionMode")]
+		[MenuItem("Memo/Memo001/LogIMECompositionMode", priority = 1)]
 		private static void LogIMECompositionMode() {
 			Debug.Log(Input.imeCompositionMode);;
 		}
