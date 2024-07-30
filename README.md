@@ -34,12 +34,12 @@
 ## 备忘4：PopupStylePath
 一个Windows资源管理器地址栏风格的文本输入框。  
 这是从我以前写的一个OSS上传工具中抽出来的，曾经我用它展示本地文件夹路径和远端OSS路径（通过网络请求获取远端目录）。  
-![PopupStylePath](Assets/Memo4_PopupStylePath/Captures~/PopupStylePath.png)  
+![PopupStylePath](Assets/Memo004_PopupStylePath/Captures~/PopupStylePath.png)  
 **示例：** 在菜单栏中可以找到相应的菜单项，点击可打开示例窗口。  
 
 ## 备忘5：ComponentMenu
 全局地在所有组件右键菜单中添加菜单项。  
-![ComponentMenu](Assets/Memo5_ComponentMenu/Captures~/ComponentMenu.png)  
+![ComponentMenu](Assets/Memo005_ComponentMenu/Captures~/ComponentMenu.png)  
 **示例：** 在Inspector面板中，右键点击任意组件标题，在弹出的菜单中可以看到新增的“LogComponent”菜单项，点击菜单项可以打印组件对象。  
 
 ## 备忘6：GetFieldPath
@@ -57,18 +57,23 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 * 通过ScriptableObject（或MoniBehaviour）对象获取到MonoScript对象，再通过AssetDatabase获取到MonoScript对象的路径，适用于本身就在MonoScript或MoniBehaviour派生类内的调用。  
 * 通过一个已知的独一无二的文件名，搜索文件路径，适用于已知文件但不确定文件被放在哪里的情况。  
 
-![GetCallerFilePath](Assets/Memo7_GetCallerFilePath/Captures~/GetCallerFilePath.png)  
+![GetCallerFilePath](Assets/Memo007_GetCallerFilePath/Captures~/GetCallerFilePath.png)  
 **示例：** 在菜单栏中可以找到相应的菜单项，点击可打印出脚本的路径。  
 
 ## 备忘8：EvenDistribution
 在 **圆形平面** 或 **球面** 上均匀分布点，可用于视野内均匀分布射线检测。  
 其原理是将多个坐标，以幂函数分配到圆心的距离（为了处理中间密边缘疏的问题），然后从圆心到边缘螺旋分布，每次旋转黄金分割比例（(√5-1)/2）的弧度值。  
-![DistributionInCircle](Assets/Memo8_EvenDistribution/Captures~/DistributionInCircle.gif) 
-![DistributionInSphere](Assets/Memo8_EvenDistribution/Captures~/DistributionInSphere.gif)  
-**示例：** 打开 Memo8_EvenDistribution/Scenes 目录下的 [**Sample**](Assets/Memo8_EvenDistribution/Scenes/Sample.unity) 场景，即可在 **Scene窗口** 查看效果。  
+![DistributionInCircle](Assets/Memo008_EvenDistribution/Captures~/DistributionInCircle.gif) 
+![DistributionInSphere](Assets/Memo008_EvenDistribution/Captures~/DistributionInSphere.gif)  
+**示例：** 打开 Memo008_EvenDistribution/Scenes 目录下的 [**Sample**](Assets/Memo008_EvenDistribution/Scenes/Sample.unity) 场景，即可在 **Scene窗口** 查看效果。  
 
 ## 备忘9：RayIntersectsTriangle
 判断射线与三角面是否相交，若相交，则返回距离。  
 参考了 [**《如何判断三维空间中射线是否与三角形相交》**](https://zhuanlan.zhihu.com/p/687077146) ，原理文章里有写。
-![RayIntersectsTriangle](Assets/Memo9_RayIntersectsTriangle/Captures~/RayIntersectsTriangle.gif)  
-**示例：** 打开 Memo9_RayIntersectsTriangle/Scenes 目录下的 [**Sample**](Assets/Memo9_RayIntersectsTriangle/Scenes/Sample.unity) 场景，即可在 **Scene窗口** 查看效果。  
+![RayIntersectsTriangle](Assets/Memo009_RayIntersectsTriangle/Captures~/RayIntersectsTriangle.gif)  
+**示例：** 打开 Memo009_RayIntersectsTriangle/Scenes 目录下的 [**Sample**](Assets/Memo009_RayIntersectsTriangle/Scenes/Sample.unity) 场景，即可在 **Scene窗口** 查看效果。  
+
+## 备忘10：TitleModifier
+修改Unity编辑器主窗口的标题，显示当前Git分支名称。  
+![TitleModifier](Assets/Memo010_TitleModifier/Captures~/TitleModifier.png)  
+**示例：** 在菜单栏中可以找到更新标题的设置项。
