@@ -38,8 +38,7 @@ namespace ToolKits {
 			try {
 				using (Process process = Process.Start(startInfo)) {
 					using (StreamReader reader = process?.StandardOutput) {
-						string readToEnd = reader?.ReadToEnd();
-						return readToEnd?.Trim();
+						return reader?.ReadToEnd().Trim();
 					}
 				}
 			} catch (Win32Exception ex) {
