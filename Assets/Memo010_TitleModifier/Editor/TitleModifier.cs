@@ -8,6 +8,11 @@ namespace ToolKits {
 		[InitializeOnLoadMethod]
 		private static void Init() {
 			EditorApplication.updateMainWindowTitle += OnUpdateMainWindowTitle;
+			EditorApplication.focusChanged += isFocused => {
+				if (isFocused) {
+					UpdateMainWindowTitle();
+				}
+			};
 		}
 
 		[MenuItem("Memo/Memo010/UpdateMainWindowTitle", priority = 10)]
