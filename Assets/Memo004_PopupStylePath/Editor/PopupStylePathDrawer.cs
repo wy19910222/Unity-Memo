@@ -15,11 +15,15 @@ using UnityEditor;
 namespace Memo4_PopupStylePath.Editor {
 	public class PopupStylePathDrawer {
 		private GUIStyle m_ButtonMidStyle;
-		private GUIStyle ButtonMidStyle => m_ButtonMidStyle ??= new GUIStyle("ButtonMid") {
-			focused = new GUIStyleState() {
-				textColor = Color.white
+		private GUIStyle ButtonMidStyle {
+			get {
+				if (m_ButtonMidStyle == null) {
+					m_ButtonMidStyle ??= new GUIStyle("ButtonMid");
+					m_ButtonMidStyle.focused.textColor = m_ButtonMidStyle.normal.textColor;
+				}
+				return m_ButtonMidStyle;
 			}
-		};
+		}
 
 		private bool m_IsEditingPath;
 		
