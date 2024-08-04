@@ -23,13 +23,10 @@ namespace Memo11_SharedMemory.Editor {
 			if (capacity <= 0) {
 				throw new ArgumentException("无效容量！", nameof(capacity));
 			}
-			if (capacity > int.MaxValue - 4) {
-				throw new ArgumentException($"容量溢出，请将容量设置为{int.MaxValue - 4}以内！", nameof(capacity));
-			}
 			Capacity = capacity;
 			MemoryMappedFileName = "MemoryMappedFile_" + name;
 			MutexName = "Mutex_" + name;
-			m_File = MemoryMappedFile.CreateOrOpen(MemoryMappedFileName, Capacity + 4);
+			m_File = MemoryMappedFile.CreateOrOpen(MemoryMappedFileName, Capacity + 4L);
 			// name不能与MemoryMappedFile的name相同，否则拿不到锁
 			m_Mutex = new Mutex(false, MutexName);
 		}
@@ -44,7 +41,7 @@ namespace Memo11_SharedMemory.Editor {
 				throw new ArgumentException("数据长度超出容量！", nameof(data));
 			}
 			if (m_Mutex.WaitOne()) {
-				using (MemoryMappedViewAccessor writer = m_File.CreateViewAccessor(0, dataLength + 4)) {
+				using (MemoryMappedViewAccessor writer = m_File.CreateViewAccessor(0, dataLength + 4L)) {
 					byte[] bytes = BitConverter.GetBytes(dataLength);
 					writer.WriteArray(0, bytes, 0, 4);
 					if (dataLength > 0) {
