@@ -77,3 +77,8 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 修改Unity编辑器主窗口的标题，显示当前Git分支名称。  
 ![TitleModifier](Assets/Memo010_TitleModifier/Captures~/TitleModifier.png)  
 **示例：** 在菜单栏中可以找到更新标题的设置项。
+
+## 备忘11：共享内存（IPC）
+封装跨进程共享内存的读和写。  
+![TitleModifier](Assets/Memo011_SharedMemory/Captures~/SharedMemory.gif)  
+**示例：** 在菜单栏中可以找到相应的菜单项，点击可打开示例窗口。  
