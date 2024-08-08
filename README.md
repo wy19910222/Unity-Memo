@@ -76,9 +76,36 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 ## 备忘10：TitleModifier
 修改Unity编辑器主窗口的标题，显示当前Git分支名称。  
 ![TitleModifier](Assets/Memo010_TitleModifier/Captures~/TitleModifier.png)  
-**示例：** 在菜单栏中可以找到更新标题的设置项。
+**示例：** 在菜单栏中可以找到更新标题的设置项。  
 
 ## 备忘11：共享内存（IPC）
 封装跨进程共享内存的读和写。  
 ![TitleModifier](Assets/Memo011_SharedMemory/Captures~/SharedMemory.gif)  
 **示例：** 在菜单栏中可以找到相应的菜单项，点击可打开示例窗口。  
+
+## 备忘12：对 IMGUI 的一些封装
+之前写 **Unity-ControlSystem** 仓库时封装的一些IMGUI接口，因为经常需要打开查阅一下，就干脆放这里来了。  
+* CustomEditorGUI.BeginLabelWidth/EndLabelWidth：设置和恢复EditorGUIUtility.labelWidth  
+* CustomEditorGUI.BeginFieldWidth/EndFieldWidth：设置和恢复EditorGUIUtility.fieldWidth
+* CustomEditorGUI.BeginIconSize/BeginIconSize：设置和恢复默认的Icon尺寸
+* CustomEditorGUI.BeginColor/EndColor：设置和恢复GUI.color
+* CustomEditorGUI.BeginContentColor/EndContentColor：设置和恢复GUI.contentColor
+* CustomEditorGUI.BeginBackgroundColor/EndBackgroundColor：设置和恢复GUI.backgroundColor
+* CustomEditorGUI.BeginRotate/EndRotate：设置和恢复GUI坐标系的旋转
+* CustomEditorGUI.BeginScale/EndScale：设置和恢复GUI坐标系的缩放
+* CustomEditorGUI.BeginDisabled/EndDisabled：设置和恢复GUI.enabled
+* CustomEditorGUI.BeginBold/EndBold：设置和恢复默认是否粗体字
+* CustomEditorGUI.IsVertical：当前布局是否是竖向布局（否则为横向）
+* CustomEditorGUI.IsPrefabComparing：当前窗口是否是Prefab对比窗口
+* CustomEditorGUI.GetContextWidth：获得当前内容的宽度
+* CustomEditorGUI.GetLastRect：获得上一个组件的范围
+* CustomEditorGUI.GetNextRect：获得下一个组件的范围
+* CustomEditorGUI.Repaint：重绘当前的View
+* CustomEditorGUI.RepaintAllInspectors：重绘所有Inspector窗口
+* CustomEditorGUI.RepaintEditorWindows：重绘所有窗口
+* CustomEditorGUI.RepaintScene：重绘场景
+* CustomEditorGUI.RepaintAllViews：重绘所有
+* PopupContent：一个通用的下拉窗口，支持设置长宽，支持通过传入回调来绘制窗口内容。  
+* PopupMultiSelector：封装的一个支持超过32个选项的多选下拉菜单。  
+  ![TitleModifier](Assets/Memo012_CustomEditorGUI/Captures~/PopupMultiSelector.gif)  
+**示例：** 在菜单栏中可以找到相应的菜单项，点击可打开PopupMultiSelector的示例窗口。其他接口请直接看代码。  
