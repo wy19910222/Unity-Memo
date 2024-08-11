@@ -11,12 +11,10 @@ using UnityEngine;
 
 namespace Memo012_CustomEditorGUI.Editor {
 	public class PopupContent : PopupWindowContent {
-		private float Width { get; }
-		private float Height { get; }
-		private Action<Rect> OnGUIAction { get; }
-
+		public float Width { get; }
+		public float Height { get; }
+		public Action<Rect> OnGUIAction { get; }
 		public Action OnOpenAction { get; set; }
-
 		public Action OnCloseAction { get; set; }
 
 		public PopupContent(float width, float height, Action<Rect> onGUIAction) {
@@ -31,6 +29,6 @@ namespace Memo012_CustomEditorGUI.Editor {
 
 		public override void OnOpen() => OnOpenAction?.Invoke();
 
-		public override void OnClose() => OnOpenAction?.Invoke();
+		public override void OnClose() => OnCloseAction?.Invoke();
 	}
 }
