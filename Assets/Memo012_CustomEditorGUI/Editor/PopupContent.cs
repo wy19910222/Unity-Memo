@@ -13,16 +13,24 @@ namespace Memo012_CustomEditorGUI.Editor {
 	public class PopupContent : PopupWindowContent {
 		private float Width { get; }
 		private float Height { get; }
-		private Action<Rect> OnDraw { get; }
+		private Action<Rect> OnGUIAction { get; }
 
-		public PopupContent(float width, float height, Action<Rect> onDraw) {
+		public Action OnOpenAction { get; set; }
+
+		public Action OnCloseAction { get; set; }
+
+		public PopupContent(float width, float height, Action<Rect> onGUIAction) {
 			Width = width;
 			Height = height;
-			OnDraw = onDraw;
+			OnGUIAction = onGUIAction;
 		}
 
-		public override void OnGUI(Rect rect) => OnDraw?.Invoke(rect);
-
 		public override Vector2 GetWindowSize() => new Vector2(Width, Height);
+
+		public override void OnGUI(Rect rect) => OnGUIAction?.Invoke(rect);
+
+		public override void OnOpen() => OnOpenAction?.Invoke();
+
+		public override void OnClose() => OnOpenAction?.Invoke();
 	}
 }
