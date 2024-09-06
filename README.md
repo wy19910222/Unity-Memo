@@ -109,3 +109,9 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 * PopupMultiSelector：封装的一个支持超过32个选项的多选下拉菜单。  
   ![TitleModifier](Assets/Memo012_CustomEditorGUI/Captures~/PopupMultiSelector.gif)  
 **示例：** 在菜单栏中可以找到相应的菜单项，点击可打开PopupMultiSelector的示例窗口。其他接口请直接看代码。  
+
+## 备忘13：阻止资源文件保存
+在保存流程中过滤掉指定资源路径，从而阻止部分资源的保存。可用于资源合法性检查等。  
+![PreventSaving_Dialog](Assets/Memo013_PreventSaving/Captures~/PreventSaving_Dialog.png)  
+![PreventSaving_Console](Assets/Memo013_PreventSaving/Captures~/PreventSaving_Console.png)  
+**示例：** 在菜单栏中可以找到相应的菜单项，点击可切换开关。  
