@@ -21,10 +21,14 @@ namespace Memo012_CustomEditorGUI.Editor {
 
 		private void ShowButton(Rect rect) {
 			if (GUI.Button(rect, EditorGUIUtility.IconContent("_Help"), "IconButton")) {
-				PopupWindow.Show(rect, new PopupContent(130, 30, popupRect => {
-					popupRect.x += 6;
-					EditorGUI.LabelField(popupRect, "这里是通用弹窗示例。");
-				}));
+				PopupWindow.Show(rect, new PopupContent() {
+					Width = 130,
+					Height = 30,
+					OnGUIAction = popupRect => {
+						popupRect.x += 6;
+						EditorGUI.LabelField(popupRect, "这里是通用弹窗示例。");
+					}
+				});
 			}
 		}
 
