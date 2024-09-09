@@ -284,6 +284,10 @@ namespace Memo012_CustomEditorGUI.Editor {
 			EditorApplication.QueuePlayerLoopUpdate();
 		}
 	
+		public static void RepaintSceneImmediate() {
+			SceneView.RepaintAll();
+		}
+	
 		public static void RepaintAllViews() {
 			UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
 		}
