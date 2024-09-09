@@ -10,7 +10,7 @@ using UnityEditor;
 using UnityEngine;
 
 namespace Memo013_PreventSaving.Editor {
-	public class PreventSaving : AssetModificationProcessor {
+	public class PreventSaving : UnityEditor.AssetModificationProcessor {
 		private static bool s_IsPreventSavingPrefab;
 		
 		private static string[] OnWillSaveAssets(string[] paths) {
