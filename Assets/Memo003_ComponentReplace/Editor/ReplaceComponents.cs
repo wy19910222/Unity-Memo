@@ -148,8 +148,13 @@ namespace Memo003_ComponentReplace.Editor {
 					UObject.DestroyImmediate(src, true);
 				}
 				EditorUtility.SetDirty(go);
+#if Unity_2020_3_OR_NEWER
 				AssetDatabase.SaveAssetIfDirty(go);
+#endif
 			}
+#if !Unity_2020_3_OR_NEWER
+			AssetDatabase.SaveAssets();
+#endif
 		}
 	
 		[MenuItem("Assets/老脚本废弃方案/打印Prefab内对子孙Prefab的修改的路径", priority = 0)]

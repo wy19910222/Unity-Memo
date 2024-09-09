@@ -18,7 +18,7 @@ namespace Memo004_PopupStylePath.Editor {
 		private GUIStyle ButtonMidStyle {
 			get {
 				if (m_ButtonMidStyle == null) {
-					m_ButtonMidStyle ??= new GUIStyle("ButtonMid");
+					m_ButtonMidStyle = new GUIStyle("ButtonMid");
 					m_ButtonMidStyle.focused.textColor = m_ButtonMidStyle.normal.textColor;
 				}
 				return m_ButtonMidStyle;
@@ -72,7 +72,7 @@ namespace Memo004_PopupStylePath.Editor {
 			if (Event.current.type != EventType.Layout && Event.current.type != EventType.Repaint) {
 				m_IsEditingPath = GUI.GetNameOfFocusedControl() == "InputField" && EditorGUIUtility.editingTextField;
 				if (m_IsEditingPath) {
-					if (Event.current.type is EventType.MouseDown or EventType.MouseUp
+					if (Event.current.type is EventType.MouseDown || Event.current.type is EventType.MouseUp
 							&& !GUILayoutUtility.GetLastRect().Contains(Event.current.mousePosition)) {
 						m_IsEditingPath = false;
 						Type viewType = typeof(EditorGUIUtility).Assembly.GetType("UnityEditor.GUIView");

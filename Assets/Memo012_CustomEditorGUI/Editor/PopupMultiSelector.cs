@@ -41,7 +41,7 @@ namespace Memo012_CustomEditorGUI.Editor {
 		}
 		public static void IntPopupMultiSelect(Action<int[]> onChange, Rect rect, GUIContent content, int[] selectedValues, GUIContent[] displayedOptions, int[] optionValues, GUIStyle style) {
 			(bool[] isSelecteds, List<GUIContent> displayedContents) = GetSelects(selectedValues, displayedOptions, optionValues);
-			PopupMultiSelect(onChange == null ? null : _isSelects => {
+			PopupMultiSelect(onChange == null ? (Action<bool[]>) null : _isSelects => {
 				List<int> selectValueList = new List<int>();
 				for (int i = 0, optionLength = optionValues.Length; i < optionLength; ++i) {
 					if (_isSelects[i]) {
@@ -80,7 +80,7 @@ namespace Memo012_CustomEditorGUI.Editor {
 		}
 		public static void IntPopupMultiSelect(Action<int[]> onChange, GUIContent content, int[] selectedValues, GUIContent[] displayedOptions, int[] optionValues, GUIStyle style, params GUILayoutOption[] options) {
 			(bool[] isSelecteds, List<GUIContent> displayedContents) = GetSelects(selectedValues, displayedOptions, optionValues);
-			PopupMultiSelect(onChange == null ? null : newIsSelects => {
+			PopupMultiSelect(onChange == null ? (Action<bool[]>) null : newIsSelects => {
 				List<int> selectValueList = new List<int>();
 				for (int i = 0, optionLength = optionValues.Length; i < optionLength; ++i) {
 					if (newIsSelects[i]) {
