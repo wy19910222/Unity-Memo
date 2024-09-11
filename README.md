@@ -103,8 +103,10 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 * CustomEditorGUI.Repaint：重绘当前的View
 * CustomEditorGUI.RepaintAllInspectors：重绘所有Inspector窗口
 * CustomEditorGUI.RepaintEditorWindows：重绘所有窗口
-* CustomEditorGUI.RepaintScene：重绘场景
+* CustomEditorGUI.RepaintScene：重绘场景（排队重绘）
+* CustomEditorGUI.RepaintSceneImmediate：重绘场景（直接调用重绘）
 * CustomEditorGUI.RepaintAllViews：重绘所有
+* CustomEditorGUI.DisableScenePick：Scene窗口中阻止选中场景中其他对象
 * PopupContent：一个通用的下拉窗口，支持设置长宽，支持通过传入回调来绘制窗口内容。  
 * PopupMultiSelector：封装的一个支持超过32个选项的多选下拉菜单。  
   ![TitleModifier](Assets/Memo012_CustomEditorGUI/Captures~/PopupMultiSelector.gif)  

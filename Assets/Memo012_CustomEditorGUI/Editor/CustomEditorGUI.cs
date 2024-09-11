@@ -291,5 +291,9 @@ namespace Memo012_CustomEditorGUI.Editor {
 		public static void RepaintAllViews() {
 			UnityEditorInternal.InternalEditorUtility.RepaintAllViews();
 		}
+		
+		public static void DisableScenePick() {
+			HandleUtility.AddDefaultControl(GUIUtility.GetControlID(FocusType.Passive));
+		}
 	}
 }
