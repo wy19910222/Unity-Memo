@@ -161,6 +161,16 @@ namespace Memo012_CustomEditorGUI.Editor {
 			getBoldDefaultFontMI?.Invoke(null, new object[] { isBold });
 		}
 		
+		public static void BeginSceneGUI() {
+			Handles.BeginGUI();
+		}
+		public static void EndSceneGUI() {
+			Handles.EndGUI();
+		}
+		
+		public static void Beep() {
+			EditorApplication.Beep();
+		}
 	
 		public static void Space(float space, bool expand = true) {
 			if (expand) {

@@ -95,6 +95,7 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 * CustomEditorGUI.BeginScale/EndScale：设置和恢复GUI坐标系的缩放
 * CustomEditorGUI.BeginDisabled/EndDisabled：设置和恢复GUI.enabled
 * CustomEditorGUI.BeginBold/EndBold：设置和恢复默认是否粗体字
+* CustomEditorGUI.BeginSceneGUI/EndSceneGUI：在Scene窗口中绘制GUI内容
 * CustomEditorGUI.IsVertical：当前布局是否是竖向布局（否则为横向）
 * CustomEditorGUI.IsPrefabComparing：当前窗口是否是Prefab对比窗口
 * CustomEditorGUI.GetContextWidth：获得当前内容的宽度
