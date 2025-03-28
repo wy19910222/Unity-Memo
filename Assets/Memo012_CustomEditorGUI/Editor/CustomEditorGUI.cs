@@ -269,8 +269,8 @@ namespace Memo012_CustomEditorGUI.Editor {
 		public static void RepaintAllInspectors() {
 			// InspectorWindow.RepaintAllInspectors();
 			Type inspectorType = typeof(EditorWindow).Assembly.GetType("UnityEditor.InspectorWindow");
-			MethodInfo repaintAllInspectorsFI = inspectorType?.GetMethod("RepaintAllInspectors", BindingFlags.Static | BindingFlags.NonPublic);
-			repaintAllInspectorsFI?.Invoke(null, null);
+			MethodInfo repaintAllInspectorsMI = inspectorType?.GetMethod("RepaintAllInspectors", BindingFlags.Static | BindingFlags.NonPublic);
+			repaintAllInspectorsMI?.Invoke(null, null);
 			// // InspectorWindow.m_AllInspectors.ForEach(inspector => inspector.Repaint());
 			// Type inspectorType = typeof(EditorWindow).Assembly.GetType("UnityEditor.InspectorWindow");
 			// FieldInfo allInspectorsFI = inspectorType?.GetField("m_AllInspectors", BindingFlags.Static | BindingFlags.NonPublic);
