@@ -118,3 +118,8 @@ FieldPathUtils.GetFieldPath((GameObject go) => go.transform.position.magnitude);
 ![PreventSaving_Dialog](Assets/Memo013_PreventSaving/Captures~/PreventSaving_Dialog.png)  
 ![PreventSaving_Console](Assets/Memo013_PreventSaving/Captures~/PreventSaving_Console.png)  
 **示例：** 在菜单栏中可以找到相应的菜单项，点击可切换开关。  
+
+## 备忘14：动态添加菜单项
+利用逻辑语句动态添加菜单项，而不是通过Attribute去修饰方法。  
+![DynamicAddMenuItems](Assets/Memo014_DynamicAddMenuItems/Captures~/DynamicAddMenuItems.gif)  
+**示例：** 在菜单栏中可以找到相应的添加和移除菜单项，点击可添加或移除示例菜单项。  
